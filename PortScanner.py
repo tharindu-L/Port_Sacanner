@@ -1,5 +1,10 @@
 import socket
 import threading
+import pyfiglet
+#from colorama import Force, Style, init
+
+banner = pyfiglet.figlet_format("PortZ")
+print(banner)
 
 ip = (input("Enter the IP address or domain name : "))
 start_port = int(input("Enter the start port : "))
@@ -31,12 +36,18 @@ def scan_port(ip, port):
         result = s.connect_ex((ip, port))
         if result == 0:
             service = common_ports.get(port, "Unknown Service")
-            print(f"[+] Port {port} is open - {service}\n")
+            try:
+                s.send(b'Hello\r\n')
+                ban = s.recv(1024).decode().strip()
+            except:
+                ban = "No banner received"
+            print(f"✅ Port {port} is open - {service}")
+            print(f"    └─ 🧾 {ban}")
         else:
-            print(f"[-] Port {port} is closed\n")
+            print(f"❌ Port {port} is closed\n")
         s.close()
     except Exception as e:
-        print(f"[!] Error scanning port {port}: {e}")
+        print(f"⚠️ Error scanning port {port}: {e}")
 
 def threaf_scan(ip, port):
     scan_port(ip, port)
