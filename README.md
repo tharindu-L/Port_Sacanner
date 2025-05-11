@@ -29,8 +29,8 @@ A simple yet powerful Python-based port scanner that detects open ports, identif
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YourUsername/port-scanner.git
-cd port-scanner
+git clone https://github.com/tharindu-L/Port-Scanner.git
+cd Port_Scanner
 ```
 
 ### 2. Install Dependencies
@@ -42,5 +42,5 @@ pip install colorama pyfiglet
 ### 3. Run the Scanner
 
 ```bash
-python port_scanner.py
+python Port_Scanner.py
 ```
