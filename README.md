@@ -29,7 +29,7 @@ A simple yet powerful Python-based port scanner that detects open ports, identif
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/tharindu-L/Port-Scanner.git
+git clone https://github.com/tharindu-L/Port_Scanner.git
 cd Port_Scanner
 ```
 
